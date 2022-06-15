@@ -1,0 +1,19 @@
+//@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+@mixin respond-large-phones {
+    @media (min-width: 380px) {
+        @content;
+    }
+}
+
+@mixin respond-tablet {
+    @media (min-width: 640px) {
+        @content;
+    }
+}
+
+@mixin respond-desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}

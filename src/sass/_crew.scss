@@ -1,0 +1,257 @@
+@import '_globals';
+
+section.crew-page {
+    background: url('../assets/crew/background-crew-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @include respond-tablet {
+        background: url('../assets/crew/background-crew-tablet.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    @include respond-desktop {
+        background: url('../assets/crew/background-crew-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .header {
+        width: fit-content;
+        padding: 2rem 0;
+        margin: 0 auto;
+
+        @include respond-tablet {
+            padding: 7.5rem 0 2rem 2.5rem;
+            margin: 0;
+        }
+
+        @include respond-desktop {
+            padding: 7.5rem 0 2rem 7.5rem;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 2.7px;
+            color: #fff;
+
+            @include respond-tablet {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            @include respond-desktop {
+                text-align: center;
+                font-size: inherit;
+                letter-spacing: 4.8px;
+            }
+        }
+    }
+
+    .tabs {
+        position: relative;
+        z-index: 50;
+        transform: translateY(21rem);
+        width: 30%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        @include respond-large-phones {
+            transform: translateY(23rem);
+        }
+
+        @include respond-tablet {
+            transform: translateY(28rem);
+            width: 20%;
+        }
+
+        @include respond-desktop {
+            transform: translate(10.5rem, 26rem);
+            width: 10%;
+            margin: 0;
+
+        }
+
+        div {
+            padding: 5px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.17;
+            cursor: pointer;
+
+            @include respond-tablet {
+                padding: 7px;
+            }
+
+            &:hover {
+                opacity: 0.3;
+            }
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .crew {
+        display: flex;
+        width: 400%;
+        transition: transform 400ms ease-in-out;
+
+        &.commander {
+            transform: translateX(0);
+        }
+
+        &.specialist {
+            transform: translateX(-100vw);
+        }
+
+        &.pilot {
+            transform: translateX(-200vw);
+        }
+
+        &.engineer {
+            transform: translateX(-300vw);
+        }
+
+        .personnel {
+            width: 100%;
+
+            @include respond-tablet {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            @include respond-desktop {
+                padding: 0 5rem;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            .personnel-image {
+                width: 50%;
+                padding: 2rem 0 8.5rem 0;
+                margin: 0 auto;
+
+                @include respond-tablet {
+                    padding-top: 5rem;
+                }
+
+                @include respond-desktop {
+                    width: 30%;
+                    transform: translate(-10rem, -7rem);
+                    margin: 0;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text {
+                @include respond-desktop {
+                    padding: 8rem 5rem 0 5rem;
+                    transform: translateY(-5rem);
+                }
+            }
+
+            .role {
+                width: fit-content;
+                margin: 0 auto;
+
+                @include respond-desktop {
+                    margin: 0;
+                }
+
+                p {
+                    color: #fff;
+                    text-align: center;
+                    text-transform: uppercase;
+                    line-height: 18px;
+                    opacity: 0.5;
+
+                    @include respond-tablet {
+                        font-size: 24px;
+                        line-height: 28px;
+                    }
+
+                    @include respond-desktop {
+                        font-size: 28px;
+                        line-height: 34px;
+                    }
+                }
+            }
+
+            .name {
+                padding: 0.8rem 0 2rem 0;
+                width: fit-content;
+                margin: 0 auto;
+
+                @include respond-desktop {
+                    margin: 0;
+                }
+
+                h1 {
+                    color: #fff;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-size: 24px;
+                    line-height: 28px;
+
+                    @include respond-tablet {
+                        font-size: 40px;
+                        line-height: 46px;
+                    }
+
+                    @include respond-desktop {
+                        font-size: 50px;
+                        line-height: 56px;
+                    }
+                }
+            }
+
+            .bio {
+                padding: 0.5rem 0 2rem 0;
+                width: 95%;
+                margin: 0 auto;
+
+                @include respond-tablet {
+                    width: 65%;
+                }
+
+                @include respond-desktop {
+                    margin: 0;
+                    width: 480px;
+                }
+
+                @include respond-large-phones {
+                    padding-bottom: 5rem;
+                }
+
+                p {
+                    color: #D0D6F9;
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 25px;
+
+                    @include respond-tablet {
+                        font-size: 18px;
+                        line-height: 28px;
+                    }
+
+                    @include respond-desktop {
+                        text-align: left;
+                        font-size: 18px;
+                        line-height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}

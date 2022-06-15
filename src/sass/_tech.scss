@@ -1,0 +1,257 @@
+@import '_globals';
+
+section.tech-page {
+    background: url('../assets/tech/background-technology-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @include respond-tablet {
+        background: url('../assets/tech/background-technology-tablet.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    @include respond-desktop {
+        background: url('../assets/tech/background-technology-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .header {
+        width: fit-content;
+        padding: 2rem 0;
+        margin: 0 auto;
+
+        @include respond-tablet {
+            padding: 7.5rem 0 2rem 2.5rem;
+            margin: 0;
+        }
+
+        @include respond-desktop {
+            padding: 7.5rem 0 2rem 7.5rem;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 2.7px;
+            color: #fff;
+
+            @include respond-tablet {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            @include respond-desktop {
+                text-align: center;
+                font-size: inherit;
+                letter-spacing: 4.8px;
+            }
+
+
+        }
+    }
+
+    .tabs {
+        position: relative;
+        z-index: 50;
+        transform: translateY(16rem);
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        @include respond-large-phones {
+            transform: translateY(17rem);
+        }
+
+        @include respond-tablet {
+            width: 30%;
+            transform: translateY(31rem);
+        }
+
+        @include respond-desktop {
+            transform: translate(5rem, 10rem);
+            margin: 0;
+            height: 15rem;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #fff;
+            background: transparent;
+            border: 1px solid #aaa;
+            transition: all 500ms ease-in-out 50ms;
+            cursor: pointer;
+
+            @include respond-tablet {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            @include respond-desktop {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            &.active {
+                color: #000;
+                background: #fff;
+            }
+        }
+    }
+
+
+    .tech {
+        display: flex;
+        width: 300vw;
+        transition: transform 400ms ease-in-out;
+
+        &.vehicle {
+            transform: translateX(0);
+        }
+
+        &.port {
+            transform: translateX(-100vw);
+        }
+
+        &.capsule {
+            transform: translateX(-200vw);
+        }
+
+        .tech-piece {
+            width: 100%;
+
+            @include respond-desktop {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .tech-image {
+                width: 100%;
+                padding: 2rem 0 5rem 0;
+                margin: 0 auto;
+
+                @include respond-desktop {
+                    padding-left: 5rem;
+                    transform: translateY(-10rem);
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text {
+                width: 90%;
+                margin: 0 auto;
+
+                @include respond-tablet {
+                    padding-top: 5rem;
+                }
+
+                @include respond-desktop {
+                    padding-top: inherit;
+                    padding-left: 15rem;
+                    margin: 0;
+                    transform: translateY(-10rem);
+                }
+            }
+
+            .tech-name {
+                padding-top: 1.5rem;
+                width: fit-content;
+                margin: 0 auto;
+
+                @include respond-desktop {
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: 2.4px;
+                    color: #D0D6F9;
+                    text-align: center;
+
+                    @include respond-tablet {
+                        font-size: 16px;
+                        line-height: 19px;
+                        text-align: center;
+                    }
+
+                    @include respond-desktop {
+                        text-align: left;
+                    }
+                }
+
+                h1 {
+                    font-size: 24px;
+                    line-height: 28px;
+                    text-transform: uppercase;
+                    color: #fff;
+                    text-align: center;
+                    padding: 0.5rem 0;
+
+                    @include respond-tablet {
+                        font-size: 40px;
+                        line-height: 46px;
+                    }
+
+                    @include respond-desktop {
+                        font-size: 50px;
+                        line-height: 56px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .tech-description {
+                width: 95%;
+                padding: 2rem 0 6rem 0;
+                margin: 0 auto;
+
+                @include respond-large-phones {
+                    padding-bottom: 12rem;
+                }
+
+                @include respond-tablet {
+                    width: 65%;
+                }
+
+                @include respond-desktop {
+                    margin: 0;
+                    width: inherit;
+                }
+
+                p {
+                    font-size: 15px;
+                    line-height: 25px;
+                    text-align: center;
+                    color: #D0D6F9;
+                    word-spacing: 0.3rem;
+
+                    @include respond-tablet {
+                        font-size: 16px;
+                        line-height: 28px;
+                        text-align: center;
+                    }
+
+                    @include respond-desktop {
+                        font-size: 17px;
+                        line-height: 32px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

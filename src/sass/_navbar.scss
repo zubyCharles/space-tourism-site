@@ -1,0 +1,137 @@
+@import '_globals';
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 70;
+    background: transparent;
+    opacity: 0.5;
+}
+
+.nav-header {
+    position: relative;
+    z-index: 20;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 1.5rem;
+
+    .site-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: #fff;
+
+        @include respond-tablet {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        @include respond-desktop {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    }
+
+    .hamburger {
+        align-self: center;
+
+        @include respond-tablet {
+            display: none;
+        }
+    }
+}
+
+.nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0vw;
+    width: 70vw;
+    height: 100vh;
+    transform: translateX(100vw);
+    padding: 1.5rem;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-backdrop-filter: blur(81.5485px);
+    backdrop-filter: blur(81.5485px);
+    transition: transform 300ms ease-in-out;
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    @include respond-tablet {
+        position: absolute;
+        top: 36px;
+        width: 480px;
+        height: fit-content;
+        transform: translateX(0);
+        padding: 1.5rem;
+        margin: 0 auto;
+    }
+
+    @include respond-desktop {
+        top: 36px;
+        width: 750px;
+        height: fit-content;
+        padding: 0.5rem;
+    }
+
+    .close {
+        display: flex;
+        transform: translate(12rem, 0.5rem);
+
+        @include respond-tablet {
+            display: none;
+        }
+
+        img {
+            align-self: center;
+        }
+    }
+
+    .nav-list {
+        list-style: none;
+        padding-top: 5rem;
+        display: flex;
+        flex-direction: column;
+
+        @include respond-tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0;
+        }
+
+        @include respond-desktop {
+            padding: 0;
+        }
+
+        li {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 19px;
+            padding: 1.3rem 0;
+            color: #fff;
+
+            @include respond-tablet {
+                font-size: 14px;
+                padding-bottom: 0;
+
+                &.active {
+                    border-bottom: 2px solid #fff;
+                }
+            }
+
+            @include respond-desktop {
+                transform: translateY(6px);
+                padding: 16px;
+            }
+        }
+    }
+}

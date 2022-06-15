@@ -1,0 +1,292 @@
+@import '_globals';
+
+section.destinations-page {
+    background: url('../assets/destination/background-destination-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @include respond-tablet {
+        background: url('../assets/destination/background-destination-tablet.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    @include respond-desktop {
+        background: url('../assets/destination/background-destination-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .header {
+        width: fit-content;
+        padding: 2rem 0;
+        margin: 0 auto;
+
+        @include respond-tablet {
+            padding: 7.5rem 0 2rem 2.5rem;
+            margin: 0;
+        }
+
+        @include respond-desktop {
+            padding: 7.5rem 0 2rem 7.5rem;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 2.7px;
+            color: #fff;
+
+            @include respond-tablet {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            @include respond-desktop {
+                text-align: center;
+                font-size: inherit;
+                letter-spacing: 4.8px;
+            }
+        }
+    }
+
+    .tabs {
+        position: relative;
+        z-index: 50;
+        transform: translateY(18rem);
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        @include respond-tablet {
+            transform: translateY(33rem);
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        @include respond-desktop {
+            transform: translate(47.5rem, 1rem);
+            width: 30%;
+            margin: 0;
+        }
+
+        button {
+            background: transparent;
+            color: #D0D6F9;
+            border: none;
+            font-size: 14px;
+            letter-spacing: 2.36px;
+            line-height: 17px;
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+
+            @include respond-tablet {
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            @include respond-desktop {
+                font-size: inherit;
+                line-height: 19px;
+            }
+
+            &:hover {
+                border-bottom: 3px solid rgba(208, 214, 249, 0.3);
+            }
+
+            &.active {
+                border-bottom: 3px solid #D0D6F9;
+            }
+
+        }
+    }
+
+    .destinations {
+        display: flex;
+        width: 400%;
+        transition: transform 400ms ease-in-out;
+
+        &.moon {
+            transform: translateX(0);
+        }
+
+        &.mars {
+            transform: translateX(-100vw);
+        }
+
+        &.europa {
+            transform: translateX(-200vw);
+        }
+
+        &.titan {
+            transform: translateX(-300vw);
+        }
+
+        .location {
+            width: 100%;
+
+            @include respond-desktop {
+                display: grid;
+                grid-template-columns: 50% 50%;
+            }
+
+            hr {
+                width: 90%;
+                margin: 0 auto;
+                background: #333;
+                filter: opacity(0.3);
+
+                @include respond-desktop {
+                    margin: 0;
+                }
+            }
+
+            .location-image {
+                width: 50%;
+                padding: 2rem 0 5rem 0;
+                margin: 0 auto;
+
+                @include respond-tablet {
+                    padding-bottom: 6rem;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text {
+                @include respond-desktop {
+                    padding: 2rem 8rem 0 0;
+                }
+            }
+
+            .location-name {
+                padding-top: 1.5rem;
+                width: fit-content;
+                margin: 0 auto;
+
+                @include respond-desktop {
+                    margin: 0;
+                }
+
+                h1 {
+                    font-size: 56px;
+                    line-height: 64px;
+                    color: #fff;
+
+                    @include respond-tablet {
+                        font-size: 80px;
+                        line-height: 95px;
+                    }
+
+                    @include respond-desktop {
+                        font-size: 100px;
+                        line-height: 115px;
+                    }
+                }
+            }
+
+            .location-description {
+                width: 95%;
+                padding: 2rem 0;
+                margin: 0 auto;
+
+                @include respond-tablet {
+                    width: 80%;
+                    padding: 3rem 0 2.5rem 0;
+                    margin: 0 auto;
+                }
+
+                @include respond-desktop {
+                    margin: 0;
+                }
+
+                p {
+                    line-height: 25px;
+                    text-align: center;
+                    color: #D0D6F9;
+                    word-spacing: 0.3rem;
+
+                    @include respond-desktop {
+                        font-size: 18px;
+                        line-height: 32px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .flex {
+                @include respond-tablet {
+                    width: 60%;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1.2rem 0;
+                }
+
+                @include respond-desktop {
+                    width: inherit;
+                    margin: inherit;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 1.2rem 0;
+                }
+            }
+
+            .location-distance,
+            .travel-time {
+                width: fit-content;
+                padding: 1.5rem 0;
+                margin: 0 auto;
+
+                @include respond-tablet {
+                    padding: 0.5rem 0;
+                    margin: 0 auto;
+                }
+
+                @include respond-desktop {
+                    padding: inherit;
+                    margin: 0;
+                }
+
+                p {
+                    color: #D0D6F9;
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-transform: uppercase;
+                }
+
+                h1 {
+                    color: #fff;
+                    text-align: center;
+                    font-size: 28px;
+                    line-height: 32px;
+                    padding-top: 0.8rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .location-distance {
+                padding-top: 3.5rem;
+
+
+                @include respond-tablet {
+                    padding: 0 10rem 0 0;
+                }
+
+                @include respond-desktop {
+                    padding: 0 10rem 0 0;
+                }
+            }
+        }
+    }
+}

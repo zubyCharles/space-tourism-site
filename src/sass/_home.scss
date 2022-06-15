@@ -1,0 +1,166 @@
+@import '_globals';
+
+@keyframes btn-hover-effect {
+    0% {
+        box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    65% {
+        box-shadow: 0 0 1px 30px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 1px 60px rgba(255, 255, 255, 0.1);
+    }
+}
+
+section.home-page {
+    background: url('../assets/home/background-home-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include respond-tablet {
+        background: url('../assets/home/background-home-tablet.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    @include respond-desktop {
+        background: url('../assets/home/background-home-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .home {
+        width: 90%;
+        padding: 3rem 0 5rem 0;
+        margin: 0 auto;
+
+
+        @include respond-tablet {
+            padding: 15rem 0 0rem 0;
+        }
+
+        @include respond-desktop {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding: 15rem 0 0rem 0;
+        }
+
+        .intro-text {
+            @include respond-desktop {
+                max-width: 550px;
+            }
+        }
+
+        .headers {
+            padding-bottom: 1.5rem;
+
+            @include respond-tablet {
+                padding-bottom: 3rem;
+            }
+
+            h1,
+            h2 {
+                text-align: center;
+                color: #fff;
+            }
+
+            h1 {
+                font-size: 19px;
+                color: #D0D6F9;
+
+                @include respond-tablet {
+                    font-size: 20px;
+                    line-height: 24px;
+                    letter-spacing: 5px;
+                }
+
+                @include respond-desktop {
+                    font-size: 28px;
+                    letter-spacing: 5px;
+                    text-align: left;
+                }
+            }
+
+            h2 {
+                font-size: 100px;
+
+                @include respond-tablet {
+                    font-size: 150px;
+                    line-height: 180px;
+                    text-align: center;
+                }
+
+                @include respond-desktop {
+                    font-size: 150px;
+                    text-align: left;
+                }
+            }
+        }
+
+        .intro {
+            @include respond-tablet {
+                width: 65%;
+                margin: 0 auto;
+            }
+
+            @include respond-desktop {
+                width: inherit;
+                margin: 0;
+            }
+
+            p {
+                text-align: center;
+                line-height: 25px;
+                color: #D0D6F9;
+
+                @include respond-tablet {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+
+                @include respond-desktop {
+                    text-align: left;
+                }
+            }
+        }
+
+        .explore-btn {
+            width: fit-content;
+            padding: 6rem 0;
+            margin: 0 auto;
+
+            @include respond-large-phones {
+                padding-bottom: 12rem;
+            }
+
+            button {
+                border: none;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                color: #000;
+                background: #fff;
+                font-size: 20px;
+                letter-spacing: 1.25px;
+                line-height: 25px;
+
+                &:hover {
+                    animation: btn-hover-effect 2s ease-in-out 0s infinite normal;
+                }
+
+                @include respond-tablet {
+                    font-size: 32px;
+                    width: 240px;
+                    height: 240px;
+                }
+
+                @include respond-desktop {
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+        }
+    }
+}
